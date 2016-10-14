@@ -1,0 +1,8 @@
+<template>
+  <require from="./cat-photo.css"></require>
+
+  <figure>
+    <img src.bind="info.webformatURL" class="cat">
+    <img src.bind="info.userImageURL" class="author img-circle" if.bind="info.userImageURL">
+  </figure>
+</template>
