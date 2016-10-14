@@ -72,13 +72,6 @@
             ".css"
           ],
           "stub": true
-        },
-        {
-          "name": "json",
-          "extensions": [
-            ".json"
-          ],
-          "stub": true
         }
       ]
     },
@@ -102,6 +95,7 @@
         ],
         "dependencies": [
           "jquery",
+          "bootstrap-sass",
           "aurelia-binding",
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",

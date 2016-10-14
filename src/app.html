@@ -1,3 +1,22 @@
 <template>
+  <require from="./styles/main.css"></require>
+
   <h1>${message}</h1>
+
+  <button class="btn btn-primary" click.delegate="reneModal.open()">
+    Abrir Modal
+  </button>
+
+  <rene-modal rene-modal.ref="reneModal" auto-open.bind="false">
+    <h2 slot="header">En el header</h2>
+    <p slot="content">En el contenido</p>
+
+    <button
+    slot="ok-button"
+    class="btn btn-primary"
+    click.delegate="reneModal.close()"
+    >
+      Ok, Ok
+    </button>
+  </rene-modal>
 </template>
