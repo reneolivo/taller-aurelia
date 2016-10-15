@@ -13,6 +13,8 @@ export function configure(aurelia) {
     .standardConfiguration()
     .feature('resources');
 
+  aurelia.use.plugin('aurelia-animator-css');
+
   if (environment.debug) {
     aurelia.use.developmentLogging();
   }

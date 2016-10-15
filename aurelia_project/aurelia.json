@@ -96,6 +96,7 @@
         "dependencies": [
           "jquery",
           "bootstrap-sass",
+          "aurelia-animator-css",
           "aurelia-binding",
           "aurelia-bootstrapper",
           "aurelia-dependency-injection",
