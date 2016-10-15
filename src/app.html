@@ -2,15 +2,24 @@
   <require from="./styles/main.css"></require>
   <require from="./cat-photo"></require>
 
-  <h1>${message}</h1>
+  <h1>Hello ${search}!</h1>
 
+  <input
+  placeholder="Search"
+  class="form-control input-lg"
+  value.bind="search & debounce:500"
+  />
 
-  <a href="#" repeat.for="cat of cats" click.delegate="openCat(cat)">
-    <cat-photo
-    class="col-md-3"
-    info.bind="cat"
-    ></cat-photo>
-  </a>
+  <hr />
+
+  <div class="row">
+    <a href="#" repeat.for="cat of cats" click.delegate="openCat(cat)">
+      <cat-photo
+      class="col-md-3"
+      info.bind="cat"
+      ></cat-photo>
+    </a>
+  </div>
 
   <rene-modal rene-modal.ref="reneModal" auto-open.bind="false">
     <h2 slot="header">
