@@ -2,38 +2,41 @@
   <require from="./styles/main.css"></require>
   <require from="./cat-photo"></require>
 
-  <h1>Hello ${search}!</h1>
+  <div class="container">
+    <h1>Hello ${search}!</h1>
 
-  <input
-  placeholder="Search"
-  class="form-control input-lg"
-  value.bind="search & debounce:500"
-  />
+    <input
+    placeholder="Search"
+    class="form-control input-lg"
+    value.bind="search & debounce:500"
+    />
 
-  <hr />
+    <hr />
 
-  <div class="row">
-    <a href="#" repeat.for="cat of cats" click.delegate="openCat(cat)">
-      <cat-photo
-      class="col-md-3"
-      info.bind="cat"
-      ></cat-photo>
-    </a>
+    <div class="row">
+      <a href="#" repeat.for="cat of cats" click.delegate="openCat(cat)">
+        <cat-photo
+        class="col-md-3"
+        info.bind="cat"
+        ></cat-photo>
+      </a>
+    </div>
+
+    <rene-modal rene-modal.ref="reneModal" auto-open.bind="false">
+      <h2 slot="header">
+        ${selectedCat.tags}
+      </h2>
+
+      <img slot="content" width="500" src.bind="selectedCat.webformatURL">
+
+      <a
+      slot="ok-button"
+      class="btn btn-primary"
+      href.bind="selectedCat.pageURL"
+      target="_blank"
+      >
+        More Details
+      </a>
+    </rene-modal>
   </div>
-
-  <rene-modal rene-modal.ref="reneModal" auto-open.bind="false">
-    <h2 slot="header">
-      ${selectedCat.tags}
-    </h2>
-
-    <img slot="content" width="500" src.bind="selectedCat.webformatURL">
-
-    <button
-    slot="ok-button"
-    class="btn btn-primary"
-    click.delegate="reneModal.close()"
-    >
-      Yes, a pretty kitten
-    </button>
-  </rene-modal>
 </template>
